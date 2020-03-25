@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Admin
+    Route::get('/admin','AdminController@index');
+
+    Route::get('/admin/packages','PackageController@index');
+    Route::post('/admin/package/save','PackageController@save');
+    Route::post('/admin/package/update','PackageController@update');
+    Route::post('/admin/package/delete','PackageController@delete');
+
