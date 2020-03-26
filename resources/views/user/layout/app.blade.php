@@ -16,7 +16,7 @@
 <body class="">
 
     <div id="wrapper">
-    @include('admin.layout.nav')
+    @include('user.layout.nav')
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
@@ -25,7 +25,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to luqex Admin Panel.</span>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to luqex.com</span>
                 </li>
                 <li>
                     <a href="/logout">

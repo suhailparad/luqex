@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Login V15</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
-</head>
+	<head>
+		<title>Login Now :: Luqex - Saas based website uptime monitoring system</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->	
+		<link rel="icon" type="image/png" href="{{asset('auth/images/icons/favicon.ico')}}"/>
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/bootstrap/css/bootstrap.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/animate/animate.css')}}">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/css-hamburgers/hamburgers.min.css')}}">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/animsition/css/animsition.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/select2/select2.min.css')}}">
+	<!--===============================================================================================-->	
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/vendor/daterangepicker/daterangepicker.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/css/util.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('auth/css/main.css')}}">
+	<!--===============================================================================================-->
+	<!-- Toastr style -->
+    <link href="{{asset('assets/css/plugins/toastr/toastr.min.css')}}" rel="stylesheet">
+	</head>
 <body>
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(auth/images/bg-01.jpg);">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+				<form method="POST" action="/login" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Email  is required">
+						<span class="label-input100">Email ID</span>
+						<input class="input100" type="text" name="email" placeholder="Enter email address">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Enter password">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -60,13 +62,14 @@
 						</div>
 
 						<div>
-							<a href="#" class="txt1">
+							{{-- <a href="#" class="txt1">
 								Forgot Password?
-							</a>
+							</a> --}}
 						</div>
 					</div>
 
 					<div class="container-login100-form-btn">
+						{{ csrf_field() }}
 						<button class="login100-form-btn">
 							Login
 						</button>
@@ -76,22 +79,36 @@
 		</div>
 	</div>
 	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 
+<!--===============================================================================================-->
+<script src="{{asset('auth/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/vendor/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('auth/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/vendor/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{asset('auth/vendor/daterangepicker/daterangepicker.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/vendor/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{asset('auth/js/main.js')}}"></script>
+	<script src="{{asset('assets/js/plugins/toastr/toastr.min.js')}}"></script>
+	<script>
+		$(function(){
+			toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+			@if(session('message'))
+				toastr.error("{{session('message')}}")
+			@endif
+		})
+	</script>
 </body>
 </html>
