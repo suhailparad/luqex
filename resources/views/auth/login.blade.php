@@ -62,9 +62,9 @@
 						</div>
 
 						<div>
-							{{-- <a href="#" class="txt1">
-								Forgot Password?
-							</a> --}}
+							<a href="/register" class="txt1">
+								Sign up for free !
+							</a>
 						</div>
 					</div>
 

@@ -48,4 +48,8 @@ Route::group(['middleware' => ['subscriber','preventBackHistory']], function(){
     //Hit Controller
     Route::get('/user/app/{id}/hit','HitController@singleHit');
     Route::get('/user/apps/{id}/logs','HitController@getLog');
+
+    //Settings
+    Route::get('/user/settings','UserController@getSettings');
+    Route::post('/user/settings/update','UserController@updateSettings');
 });

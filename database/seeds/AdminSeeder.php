@@ -17,5 +17,10 @@ class AdminSeeder extends Seeder
             'email'=>'admin@luqex.com',
             'password'=>bcrypt('Luqex@123*'),
             'role'=>'admin']);
+
+        DB::table('packages')->insert([
+            'name'=>'Free Tier',
+            'description'=>'Unlimited Access',
+            'price'=>"0"]);
     }
 }

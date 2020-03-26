@@ -153,7 +153,7 @@
                         </label>
                     </div>`;
                     table.row.add([result.id,
-                        title,url,enabled,"N/A","Never",action
+                        title,"<a href='"+url+"' target='_blank' >"+url+"</a>",enabled,"N/A","Never",action
                     ]).draw();
                     $("#modal").modal("hide");
                     toastr.success('Application added successfully','Success!!');
@@ -166,7 +166,7 @@
         //open edit
         $(document).on("click",".btn-edit",function(){
             name=$(this).closest("tr").children("td:nth(1)").html();
-            url=$(this).closest("tr").children("td:nth(2)").html();
+            url=$(this).closest("tr").children("td:nth(2)").find("a").html();
             id=$(this).data("id");
             $("button[id='save']").html("Update");
             $("button[id='save']").attr("id","update");
@@ -217,7 +217,7 @@
                     table.cell($(".btn-edit[data-id='"+id+"']")
                     .closest("tr").children("td:nth(1)")).data(title).draw();
                     table.cell($(".btn-edit[data-id='"+id+"']")
-                    .closest("tr").children("td:nth(2)")).data(url).draw();
+                    .closest("tr").children("td:nth(2)")).data("<a href='"+url+"' target='_blank' >"+url+"</a>").draw();
                     table.cell($(".btn-edit[data-id='"+id+"']")
                     .closest("tr").children("td:nth(3)")).data(status).draw();
                     $("#modal").modal("hide");

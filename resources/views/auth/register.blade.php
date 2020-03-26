@@ -69,6 +69,11 @@
                     </div>
 
 					<div class="flex-sb-m w-full p-b-30">
+						<div>
+							<a href="/login" class="txt1">
+								Already have an account !
+							</a>
+						</div>
 					</div>
 
 					<div class="container-login100-form-btn">

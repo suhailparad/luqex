@@ -37,7 +37,16 @@ class HomeController extends Controller
         $subscriber->expire_at=$now->format('Y-m-d');
         $subscriber->save();
 
-        return redirect('/register');
+        $user=[
+            'email'=>$request->email,
+            'password'=>$request->pass
+        ];
+        if(Auth::attempt($user) && Auth::user()->role=="subscriber"){
+            return redirect('user');
+        }else{
+            return redirect('/register');
+        }
+        
     }
 
     public function getLogin(){

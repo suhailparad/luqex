@@ -22,6 +22,10 @@ class CreateSubscribersTable extends Migration
             $table->date("subscribed_at");
             $table->date("expire_at");
             $table->boolean("status")->default(1);
+            $table->boolean("enableSms")->default(0);
+            $table->text("smsApi")->nullable();
+            $table->string("senderId")->nullable();
+            $table->string("number")->nullable();
             $table->timestamps();
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->foreign("package_id")->references("id")->on("packages")->onDelete("cascade");
