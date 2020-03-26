@@ -124,7 +124,7 @@
                     $("#modal").modal("hide");
                     toastr.success('Package added successfully','Success!!');
                 }else{
-                    alert("failed");
+                    toastr.error('Something went wrong, Please try again','Oopz!!');
                 }
             })
         });

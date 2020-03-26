@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/register','HomeController@getRegister');
+Route::post('/register','HomeController@doRegister');
 
 //Admin
     Route::get('/admin','AdminController@index');
@@ -25,3 +27,5 @@ Route::get('/', function () {
     Route::post('/admin/package/update','PackageController@update');
     Route::post('/admin/package/delete','PackageController@delete');
 
+    Route::get('/admin/subscribers','SubscriberController@index');
+    Route::post('/admin/subscribers/update-status','SubscriberController@updateStatus');

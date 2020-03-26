@@ -15,6 +15,8 @@ class CreateSubscribersTable extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
+            $table->string("company_name")->nullable();
+            $table->string("country")->nullable();
             $table->unsignedBigInteger("package_id");
             $table->unsignedBigInteger("user_id");
             $table->date("subscribed_at");
